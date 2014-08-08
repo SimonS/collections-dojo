@@ -5,6 +5,10 @@ function Set() {
     }, {});
 };
 
+Set.prototype.remove = function(member) {
+    delete this.set[member];
+};
+
 Set.prototype.add = function(member) {
     this.set[member] = true;
 };
@@ -27,3 +31,52 @@ Set.prototype.forEach = function(fnc) {
         fnc.call(this.set, item, i++);
     }
 }
+
+Set.prototype.all = function() {
+    var result = true;
+    for (var i = 0; i < arguments.length; i++)
+        if (!this.contains(arguments[i])) result = false;
+
+    return result;
+};
+
+Set.prototype.clone = function() {
+    var newSet = new Set();
+    this.forEach(function(item) {
+        newSet.add(item);
+    });
+    return newSet;
+}
+
+// ridiculously inefficient
+Set.prototype.union = function(other) {
+    var newSet = this.clone();
+
+    other.forEach(function(item) {
+        newSet.add(item);
+    });
+
+    return newSet;
+}
+
+// DUPLICATION
+Set.prototype.intersection = function(other) {
+    var newSet = this.clone();
+    newSet.forEach(function(val) {
+        if (!other.contains(val)) {
+            newSet.remove(val);
+        }
+    });
+    return newSet;
+};
+
+// DUPLICATION
+Set.prototype.difference = function(other) {
+    var newSet = this.clone();
+    newSet.forEach(function(val) {
+        if (other.contains(val)) {
+            newSet.remove(val);
+        }
+    });
+    return newSet;
+};
