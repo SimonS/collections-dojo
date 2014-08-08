@@ -35,11 +35,11 @@ public class HashMap<K, V> {
         return h ^ (h >>> 7) ^ (h >>> 4);
     }
 
-    public Object get(K key) {
-        List<Entry> bucketEntries = entries[hash(key.hashCode())];
-        for (Entry bucketEntry: bucketEntries) {
-
-        }
-        return entries[hash(key.hashCode())].value();
-    }
+//    public Object get(K key) {
+//        List<Entry> bucketEntries = entries[hash(key.hashCode())];
+//        for (Entry bucketEntry: bucketEntries) {
+//
+//        }
+//        return entries[hash(key.hashCode())].value();
+//    }
 }

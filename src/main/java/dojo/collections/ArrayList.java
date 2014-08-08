@@ -2,7 +2,7 @@ package dojo.collections;
 
 public class ArrayList implements List {
 
-    private static final int DEFAULT_SIZE = 10;
+    private static final int DEFAULT_SIZE = 16;
     private static int CURRENT_SIZE = DEFAULT_SIZE;
 
     private Object[] elements;
@@ -23,12 +23,21 @@ public class ArrayList implements List {
     }
 
     public void add(Object element) {
+
         if (length == elements.length) {
-            CURRENT_SIZE = CURRENT_SIZE * 2;
-            elements = new Object[CURRENT_SIZE];
+            CURRENT_SIZE = CURRENT_SIZE << 1;
+            Object[] newArray = new Object[CURRENT_SIZE];
+            elements = transfer(newArray, elements);
         }
         elements[length] = element;
         length++;
+    }
+
+    private Object[] transfer(Object[] newArray, Object[] elements) {
+        for (int i = 0; i < elements.length; i++) {
+            newArray[i] = elements[i];
+        }
+        return newArray;
     }
 
     public void insert(Object element, int index) {

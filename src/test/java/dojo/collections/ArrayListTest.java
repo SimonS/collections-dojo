@@ -1,5 +1,6 @@
 package dojo.collections;
 
+import org.joda.time.DateTime;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,8 +24,42 @@ public class ArrayListTest {
     
     @Test
     public void answerToQuestion() throws Exception {
-//        DateTime timeActuallyPurchasedTicket = DateTime.parse();
-//        assertThat(timeActuallyPurchasedTicket, is(equalTo(expectedTimeToPurchaseTicket));
+        ArrayList wimbledonQueue = new ArrayList();
+        for (int i = 0; i < 100; i++) {
+            wimbledonQueue.add("Person " + (i + 1));
+        }
+        printQueue(wimbledonQueue);
+
+        for (int i = 0; i < 4; i++) {
+            wimbledonQueue.add("Person Back " + (i + 1));
+        }
+        printQueue(wimbledonQueue);
+
+        for (int i = 0; i < 6; i++) {
+            wimbledonQueue.insert("Person Pushing " + (i + 1), 75);
+        }
+        printQueue(wimbledonQueue);
+
+        wimbledonQueue.replace("New couple 1", 100);
+        wimbledonQueue.replace("New couple 2", 101);
+
+        int secondsTilLastTicketPurchase = wimbledonQueue.length() * 45;
+
+        DateTime now = DateTime.now();
+        DateTime timeActuallyPurchasedTicket = now.plusSeconds(secondsTilLastTicketPurchase);
+
+        DateTime expectedTimeToPurchaseTicket = now.plusSeconds(4950);
+        assertThat(timeActuallyPurchasedTicket, is(equalTo(expectedTimeToPurchaseTicket)));
+
+        printQueue(wimbledonQueue);
+    }
+
+    private void printQueue(ArrayList queue) {
+        System.out.println("Printing contents of queue...");
+        for (int i = 0; i < queue.length(); i++) {
+            System.out.println("Queue no #" + (i + 1) + "=> " + queue.get(i));
+        }
+        System.out.println("");
     }
 
     @Test
@@ -99,5 +134,18 @@ public class ArrayListTest {
     @Test(expected = IndexOutOfBoundsException.class)
     public void replaceElementBeyondLengthThrowsOutOfBoundsException() throws Exception {
         list.replace("replace", 2);
+    }
+
+    @Test
+    public void resizingOfArrayListTransfersAllExistingElements() {
+        ArrayList resizedList = new ArrayList();
+        for (int i = 0; i < 16; i++) {
+            resizedList.add("" + (i + 1));
+        }
+
+        resizedList.add("caused resize");
+        assertThat(resizedList.get(15).toString(), is(equalTo("16")));
+        assertThat(resizedList.get(0).toString(), is(equalTo("1")));
+        assertThat(resizedList.get(16).toString(), is(equalTo("caused resize")));
     }
 }
