@@ -1,19 +1,20 @@
 collections-dojo
 ================
 
-Exercise #1: Lists
-
+# Question 1: Lists
 
 Description: At 6am there are a queue of 100 people waiting in line for a ticket to the Wimbledon 2014 finals between Novak Djokovic & Roger Federer.
 
-Another 4 people join the back of the queue at 6.05am, with another 6 people pushing into the queue after the 75th person 5 minutes later. A couple who were having their spaces saved are replaced by the couple they were saving a place for another 5 minutes later at 6.15am. If each person is taking on average 45 seconds to purchase their ticket at what time will the last person in the queue purchase theirs?
+Four people join the back of the queue at 6.05am, with another six people pushing into the queue after the 75th person five minutes later. A couple who were having their spaces saved are replaced by the couple (30th in the queue) they were saving a place for another five minutes later at 6.15am. If each person is taking on average 45 seconds to purchase their ticket at what time will the last person in the queue purchase theirs?
 
-Calculate the answer of this question by using a List. You must implement your own List library to complete this task.
 
-Print out a string representation of the Wimbledon queue with each person in the queue represented by the time in which they were in the queue (assume everyone who was already in the queue joined at 6am when the ticket booths opened).
+> Calculate the answer of this question by using a List. You must implement your own List library to complete this task.
 
-Print the list in reverse order
+> Print out a string representation of the Wimbledon queue with each person in the queue represented by the time in which they were in the queue (assume everyone who was already in the queue joined at 6am when the ticket booths opened).
 
+## Bonus Print the list in reverse order
+
+## Things to cover... 
 
    * Infinite list of items
    * Can add to end of list
@@ -24,20 +25,28 @@ Print the list in reverse order
    * Iterate through a list
    * Handle out of bound index errors
 
+# Question 2: LinkedList
 
-Exercise #2: Queue
+Implement Question 1 using a linked list as opposed to an array list. Think about how this implementation differs and how it will affect the performance and operation of a Linked list as opposed to an Array List.
+
+When and why might you want to use one over another?
+
+## Bonus
+
+Calculate and compare the performance of your LinkedList implementation in comparison with the ArrayList implementation.
+
+# Question 2: Queue
 
 Imagine you have a list of 10 jobs where the next job to run is the job that was first placed into the queue (uses a First-In First-Out [FIFO] policy). 
 
 Implement a queue class that supports the following operations
-
 
    * add - add a job to the start of the queue
    * remove - removes a job from the head/end of the queue
    * element - looks at the head of the queue but does not remove it
    * clear - removes all elements from the queue
 
-Exercise #2b: Priority Queue 
+# Question 3: Priority Queue 
 
 Imagine you have a list of client orders that need processing. Each clients order is given a priority.
 
@@ -51,8 +60,7 @@ Implement the Priority Queue
    * poll - retrieves and removes the head of the queue
    * peek - retrieves but doesn’t remove the head of the queue
 
-Exercise #3: Set
-
+# Question 4: Set
 
    * Cannot contain duplicate elements
    * You can add an element to a set
@@ -66,12 +74,4 @@ Exercise #3: Set
    * You can join two sets but exclude those elements that are shared (disjoint-union)
 
 
-Exercise #4: Map
-
-
-   * Contains key-value mapping
-
-
-
-Bonus:
-Implement a sorting algorithm on a collection of your choice
+# Question 5: Map
