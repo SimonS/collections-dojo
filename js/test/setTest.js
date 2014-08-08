@@ -18,3 +18,9 @@ QUnit.test( "removes duplicates", function( assert ) {
     var s = new Set(1, 3, 1, 4);
     assert.equal(3, s.length(), "new set with contents is not empty" );
 });
+
+QUnit.test( "add method", function( assert ) {
+    var s = new Set();
+    s.add(4);
+    assert.equal(true, s.contains(4), "new set with contents is not empty" );
+});
