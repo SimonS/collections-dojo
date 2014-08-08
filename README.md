@@ -12,7 +12,9 @@ Four people join the back of the queue at 6.05am, with another six people pushin
 
 > Print out a string representation of the Wimbledon queue with each person in the queue represented by the time in which they were in the queue (assume everyone who was already in the queue joined at 6am when the ticket booths opened).
 
-## Bonus Print the list in reverse order
+## Bonus
+
+Print the list in reverse order
 
 ## Things to cover... 
 
