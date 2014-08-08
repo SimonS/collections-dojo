@@ -16,7 +16,7 @@ Four people join the back of the queue at 6.05am, with another six people pushin
 
 Print the list in reverse order
 
-## Things to cover... 
+## Things to cover...
 
    * Infinite list of items
    * Can add to end of list
@@ -37,7 +37,7 @@ When and why might you want to use one over another?
 
 Calculate and compare the performance of your LinkedList implementation in comparison with the ArrayList implementation.
 
-# Question 2: Queue
+# Question 3: Queue
 
 Imagine you have a list of 10 jobs where the next job to run is the job that was first placed into the queue (uses a First-In First-Out [FIFO] policy). 
 
@@ -48,12 +48,11 @@ Implement a queue class that supports the following operations
    * element - looks at the head of the queue but does not remove it
    * clear - removes all elements from the queue
 
-# Question 3: Priority Queue 
+# Question 4: Priority Queue
 
 Imagine you have a list of client orders that need processing. Each clients order is given a priority.
 
 Implement the Priority Queue
-
 
    * add - inserts element with a set priority into the queue
    * clear - remove all elements from the queue
@@ -62,7 +61,7 @@ Implement the Priority Queue
    * poll - retrieves and removes the head of the queue
    * peek - retrieves but doesn’t remove the head of the queue
 
-# Question 4: Set
+# Question 5: Set
 
    * Cannot contain duplicate elements
    * You can add an element to a set
@@ -76,4 +75,4 @@ Implement the Priority Queue
    * You can join two sets but exclude those elements that are shared (disjoint-union)
 
 
-# Question 5: Map
+# Question 6: Map
