@@ -20,3 +20,10 @@ Set.prototype.isEmpty = function() {
 Set.prototype.contains = function(member) {
     return member in this.set;
 };
+
+Set.prototype.forEach = function(fnc) {
+    var i = 0;
+    for (item in this.set) {
+        fnc.call(this.set, item, i++);
+    }
+}

@@ -16,11 +16,20 @@ QUnit.test( "test for membership", function( assert ) {
 
 QUnit.test( "removes duplicates", function( assert ) {
     var s = new Set(1, 3, 1, 4);
-    assert.equal(3, s.length(), "new set with contents is not empty" );
+    assert.equal(3, s.length());
 });
 
 QUnit.test( "add method", function( assert ) {
     var s = new Set();
     s.add(4);
-    assert.equal(true, s.contains(4), "new set with contents is not empty" );
+    assert.equal(true, s.contains(4));
+});
+
+QUnit.test( "test iteration", function( assert ) {
+    var s = new Set(1, 2, 3);
+    var result = "";
+    s.forEach(function(val, index) {
+        result += index + '' + val; 
+    });
+    assert.equal("011223", result, "new set with contents is not empty" );
 });
