@@ -13,3 +13,8 @@ QUnit.test( "test for membership", function( assert ) {
     assert.ok(s.contains(3));
     assert.ok(!s.contains(7));
 });
+
+QUnit.test( "removes duplicates", function( assert ) {
+    var s = new Set(1, 3, 1, 4);
+    assert.equal(3, s.length(), "new set with contents is not empty" );
+});

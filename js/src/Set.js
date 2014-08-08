@@ -6,9 +6,13 @@ function Set() {
 };
 
 Set.prototype.isEmpty = function() {
-    return Object.keys(this.set).length === 0;
+    return this.length() === 0;
 };
 
 Set.prototype.contains = function(member) {
     return member in this.set;
+};
+
+Set.prototype.length = function() {
+    return Object.keys(this.set).length;
 };
